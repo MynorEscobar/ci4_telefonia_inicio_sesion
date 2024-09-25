@@ -1,0 +1,12 @@
+CRITICAL - 2024-07-25 01:50:47 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "form_nuevo_pla.php"
+[Method: GET, Route: nuevo_plan]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('form_nuevo_pla.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('form_nuevo_pla', [], true)
+ 3 APPPATH\Controllers\PlanesController.php(16): view('form_nuevo_pla')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PlanesController->nuevoPlan()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PlanesController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
