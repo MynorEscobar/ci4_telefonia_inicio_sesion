@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 18-09-2024 a las 11:49:17
+-- Tiempo de generación: 25-09-2024 a las 11:47:34
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 8.1.10
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bd_telefonia`
 --
+CREATE DATABASE IF NOT EXISTS `bd_telefonia` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `bd_telefonia`;
 
 -- --------------------------------------------------------
 
@@ -3137,7 +3139,8 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `user`, `password`, `name`, `email`, `active`, `activation_token`, `reset_token`, `reset_token_expires_at`, `created_at`, `updated_at`, `user_type_id`) VALUES
 (1, 'cliente', '123456', 'Cliente inventado', 'inventado@mail.com', 0, '', '', '2024-09-18 03:10:51', '2024-09-18 03:10:51', '2024-09-18 03:10:51', 1),
 (2, 'soyel', '123', 'Soyel Empleado', 'soyel@mail.com', 0, '', '', '2024-09-18 03:10:51', '2024-09-18 03:10:51', '2024-09-18 03:10:51', 2),
-(3, 'uno', '$2y$10$P2vua/gF0h8jubXstGU4vOgxYKj1t2xqJAe79awZPyx1XLmYD1oEe', 'uno', 'uno@mail.com', 0, '7976945ae6d8d7240af0a2e0755a27e5a6ae7d28', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1);
+(20, 'tareas', '$2y$10$QopDI9qhp4sCRFI80z4couA0XqSpYkIa.sxEbmxZyv4SRh.LeMnDm', 'tareas', 'tareascompu123@gmail.com', 1, '', '', '0000-00-00 00:00:00', '2024-09-23 04:00:56', '2024-09-23 04:01:17', 1),
+(21, 'nuevo', '$2y$10$XbBoDwAKjjFk7DZ4RtnzpeAvQe9Oh7tJw07If2Px88Fn1kAWgFEnK', 'nuevo', 'mynorescobarefpem@gmail.com', 1, '', '', '0000-00-00 00:00:00', '2024-09-25 10:50:13', '2024-09-25 10:50:54', 1);
 
 -- --------------------------------------------------------
 
@@ -3146,14 +3149,14 @@ INSERT INTO `usuarios` (`id`, `user`, `password`, `name`, `email`, `active`, `ac
 -- (Véase abajo para la vista actual)
 --
 CREATE TABLE `view_datos_planes` (
-`no_telefono` int
+`apellido_cliente` varchar(60)
+,`cliente_id` int
 ,`fecha_pago` tinyint
 ,`meses_atraso` tinyint
-,`plan_id` int
-,`cliente_id` int
+,`no_telefono` int
 ,`nombre_cliente` varchar(60)
-,`apellido_cliente` varchar(60)
 ,`nombre_plan` varchar(60)
+,`plan_id` int
 );
 
 -- --------------------------------------------------------
@@ -3216,7 +3219,7 @@ ALTER TABLE `users_types`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` smallint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` smallint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Restricciones para tablas volcadas
